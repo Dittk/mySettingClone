@@ -9,33 +9,6 @@ import UIKit
 
 class ViewController: UIViewController  {
     
-    @objc func onClickSwitch(sender: UISwitch){
-        if sender.isOn {
-            settingTableView.backgroundColor = .black
-            self.navigationController?.navigationBar.barStyle = .black
-            self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-            for i in 0..<tempCell.count{
-                tempCell[i].backgroundColor = .lightGray
-            }
-       
-        }
-        else{
-            settingTableView.backgroundColor = .white
-            navigationController?.navigationBar.barStyle = .default
-            self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
-            for i in 0..<tempCell.count{
-                tempCell[i].backgroundColor = .white
-            }
-            settingTableView.backgroundColor = UIColor(white: 245/255, alpha: 1)
-        }
-    }
-    
-    
-    
-    
-    
-    @IBOutlet weak var settingTableView: UITableView!
-
     var tempCell = [UITableViewCell]()
 
     var settingModel = [[SettingModel]]()
@@ -46,10 +19,10 @@ class ViewController: UIViewController  {
         )
         
         settingModel.append(
-            [SettingModel(leftImageName: "sun.max.circle.fill", leftImageColor: .white, leftImageBackgroundColor: .black, menuTitle: "다크 모드", menuTitleColor: .black, subTitle: nil, rightImageName: "chevron.right"),
-             SettingModel(leftImageName: "gear", leftImageColor: .white, leftImageBackgroundColor: .lightGray, menuTitle: "설정", menuTitleColor: .black, subTitle: nil, rightImageName: "chevron.right"),
+            [SettingModel(leftImageName: "personalhotspot", leftImageColor: .white, leftImageBackgroundColor: .green, menuTitle: "개인용 핫스팟", menuTitleColor: .black, subTitle: nil, rightImageName: "chevron.right"),
+             SettingModel(leftImageName: "gear", leftImageColor: .white, leftImageBackgroundColor: .darkGray, menuTitle: "일반", menuTitleColor: .black, subTitle: nil, rightImageName: "chevron.right"),
              SettingModel(leftImageName: "powersleep", leftImageColor: .white, leftImageBackgroundColor: .blue, menuTitle: "집중 모드", menuTitleColor: .black, subTitle: nil, rightImageName: "chevron.right"),
-             SettingModel(leftImageName: "personalhotspot", leftImageColor: .white, leftImageBackgroundColor: .green, menuTitle: "개인용 핫스팟", menuTitleColor: .black, subTitle: nil, rightImageName: "chevron.right"),
+             SettingModel(leftImageName: "sun.max.circle.fill", leftImageColor: .white, leftImageBackgroundColor: .black, menuTitle: "다크 모드", menuTitleColor: .black, subTitle: nil, rightImageName: "chevron.right"),
              ]
         )
             
@@ -58,6 +31,11 @@ class ViewController: UIViewController  {
             )
         
     }
+    
+    
+    @IBOutlet weak var settingTableView: UITableView!
+
+   
      
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -80,9 +58,8 @@ class ViewController: UIViewController  {
         
         settingTableView.register(UINib(nibName: "DarkModeCell", bundle: nil), forCellReuseIdentifier: "DarkModeCell")
         
-        settingTableView.backgroundColor = UIColor(white: 245/255, alpha: 1)
+        settingTableView.layer.cornerRadius = 10
         
-        self.view.backgroundColor = UIColor(white: 244/245, alpha: 1)
         makeData()
     }
     
@@ -104,24 +81,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             cell.topTitle.text = settingModel[indexPath.section][indexPath.row].menuTitle
             cell.bottomDescription.text = settingModel[indexPath.section][indexPath.row].subTitle
             
-            cell.profileImageView.image = UIImage(systemName: settingModel[indexPath.section][indexPath.row].leftImageName)
+            cell.profileImageView.image = UIImage(systemName: settingModel[indexPath.section][indexPath.row].leftImageName!)
             cell.profileImageView.tintColor = .red
-            
-            
             
             tempCell.append(cell)
             return cell
         }
         
-        if indexPath.section == 1 && indexPath.row == 0 {
+        if indexPath.section == 1 && indexPath.row == 3 {
             let cell = settingTableView.dequeueReusableCell(withIdentifier: "DarkModeCell", for: indexPath) as! DarkModeCell
             cell.topTitle.text = settingModel[indexPath.section][indexPath.row].menuTitle
-            cell.leftImage.image = UIImage(systemName: settingModel[indexPath.section][indexPath.row].leftImageName)
+            cell.leftImage.image = UIImage(systemName: settingModel[indexPath.section][indexPath.row].leftImageName!)
             cell.leftImage.tintColor = settingModel[indexPath.section][indexPath.row].leftImageColor
             cell.leftImage.backgroundColor = settingModel[indexPath.section][indexPath.row].leftImageBackgroundColor
             cell.leftImage.layer.cornerRadius = cell.leftImage.bounds.width / 3
             cell.swtich.setOn(false, animated: true)
-            cell.swtich.addTarget(self, action: #selector(onClickSwitch(sender:)), for: UIControl.Event.valueChanged)
+            
             
             tempCell.append(cell)
             return cell
@@ -130,17 +105,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         
         let cell = settingTableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! menuCell
 
-        cell.leftImage.image = UIImage(systemName: settingModel[indexPath.section][indexPath.row].leftImageName)
+        cell.leftImage.image = UIImage(systemName: settingModel[indexPath.section][indexPath.row].leftImageName!)
         cell.leftImage.tintColor = settingModel[indexPath.section][indexPath.row].leftImageColor
         cell.leftImage.backgroundColor = settingModel[indexPath.section][indexPath.row].leftImageBackgroundColor
         
         cell.leftImage.layer.cornerRadius = cell.leftImage.bounds.width / 3
         
         cell.middleTitle.text = settingModel[indexPath.section][indexPath.row].menuTitle
-        cell.middleTitle.textColor = settingModel[indexPath.section][indexPath.row].menuTitleColor
         
         cell.rightImage.image = UIImage(systemName: settingModel[indexPath.section][indexPath.row].rightImageName!)
         cell.rightImage.tintColor = .lightGray
+        
         
         tempCell.append(cell)
         return cell
@@ -161,7 +136,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             self.present(idViewCT, animated: true)
         }
         
-        
+        else if indexPath.section == 1 && indexPath.row == 0 {
+            
+            if let hotSpotVC = UIStoryboard(name: "HotSpotViewController", bundle: nil).instantiateViewController(withIdentifier: "HotSpotViewController") as? HotSpotViewController {
+                self.navigationController?.pushViewController(hotSpotVC, animated: true)
+                self.navigationController?.navigationBar.prefersLargeTitles = false
+            }
+        }
         
         else if indexPath.section == 1 && indexPath.row == 1 {
             if let generalViewController = UIStoryboard(name: "GeneralViewController", bundle: nil).instantiateViewController(withIdentifier: "GeneralViewController") as? GeneralViewController{
@@ -178,6 +159,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             }
         
         }
+        
+       
     }
     
     

@@ -19,7 +19,7 @@ class ConcentrationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ConcentrationCell", for: indexPath) as! ConcentrationCell
         
-        cell.leftImage.image = UIImage(systemName: concentData[indexPath.section][indexPath.row].leftImageName)
+        cell.leftImage.image = UIImage(systemName: concentData[indexPath.section][indexPath.row].leftImageName!)
         cell.topTItle.text = concentData[indexPath.section][indexPath.row].menuTitle
         cell.rightImage.image = UIImage(systemName: concentData[indexPath.section][indexPath.row].rightImageName!)
         cell.rightImage.tintColor = .lightGray
@@ -57,7 +57,6 @@ class ConcentrationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         concentTableView.register(UINib(nibName: "ConcentrationCell", bundle: nil), forCellReuseIdentifier: "ConcentrationCell")
         makeData()
         self.title = "집중 모드"
-        concentTableView.backgroundColor = UIColor(white: 244/255, alpha: 1)
     }
     
     

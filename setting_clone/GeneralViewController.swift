@@ -67,7 +67,6 @@ class GeneralViewController: UIViewController, UITableViewDelegate, UITableViewD
         makeGeneralData()
         
         self.title = "일반"
-        generalTableView.backgroundColor = UIColor(white: 245/255, alpha: 1)
         generalTableView.register(UINib(nibName: "GeneralCell", bundle: nil), forCellReuseIdentifier: "GeneralCell")
         super.viewDidLoad()
         

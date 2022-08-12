@@ -10,10 +10,11 @@ import UIKit
 class GeneralCell: UITableViewCell {
 
     @IBOutlet weak var leftLabel: UILabel!
+    @IBOutlet weak var rightLabel: UILabel!
     @IBOutlet weak var rightImage: UIImageView!{
         didSet{
             rightImage.image = UIImage(systemName: "chevron.right")
-            rightImage.tintColor = .black
+            rightImage.tintColor = .lightGray
         }
 }
     override func awakeFromNib() {

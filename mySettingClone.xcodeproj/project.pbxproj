@@ -18,9 +18,11 @@
 		BC41502528A1E601006F5280 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC41502328A1E601006F5280 /* GeneralViewController.swift */; };
 		BC41502828A1E64A006F5280 /* GeneralViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC41502728A1E64A006F5280 /* GeneralViewController.storyboard */; };
 		BC4E758728A4F738002C4DB1 /* HotSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E758528A4F738002C4DB1 /* HotSpotViewController.swift */; };
-		BC4E758828A4F738002C4DB1 /* HotSpotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4E758628A4F738002C4DB1 /* HotSpotViewController.xib */; };
+		BC4E758A28A4FB31002C4DB1 /* HotSpotViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC4E758928A4FB31002C4DB1 /* HotSpotViewController.storyboard */; };
 		BC8E838128A4C15700B4CE79 /* idViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E837F28A4C15700B4CE79 /* idViewController.swift */; };
 		BC8E838228A4C15700B4CE79 /* idViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8E838028A4C15700B4CE79 /* idViewController.xib */; };
+		BCDA6B2328A5D26D000617FD /* HotSpotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA6B2128A5D26D000617FD /* HotSpotCell.swift */; };
+		BCDA6B2428A5D26D000617FD /* HotSpotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDA6B2228A5D26D000617FD /* HotSpotCell.xib */; };
 		BCE5501D28A095E4004CAC4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5501C28A095E4004CAC4A /* AppDelegate.swift */; };
 		BCE5501F28A095E4004CAC4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5501E28A095E4004CAC4A /* SceneDelegate.swift */; };
 		BCE5502128A095E4004CAC4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5502028A095E4004CAC4A /* ViewController.swift */; };
@@ -46,9 +48,11 @@
 		BC41502328A1E601006F5280 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		BC41502728A1E64A006F5280 /* GeneralViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeneralViewController.storyboard; sourceTree = "<group>"; };
 		BC4E758528A4F738002C4DB1 /* HotSpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSpotViewController.swift; sourceTree = "<group>"; };
-		BC4E758628A4F738002C4DB1 /* HotSpotViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotSpotViewController.xib; sourceTree = "<group>"; };
+		BC4E758928A4FB31002C4DB1 /* HotSpotViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HotSpotViewController.storyboard; sourceTree = "<group>"; };
 		BC8E837F28A4C15700B4CE79 /* idViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = idViewController.swift; sourceTree = "<group>"; };
 		BC8E838028A4C15700B4CE79 /* idViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = idViewController.xib; sourceTree = "<group>"; };
+		BCDA6B2128A5D26D000617FD /* HotSpotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSpotCell.swift; sourceTree = "<group>"; };
+		BCDA6B2228A5D26D000617FD /* HotSpotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotSpotCell.xib; sourceTree = "<group>"; };
 		BCE5501928A095E4004CAC4A /* mySettingClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mySettingClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE5501C28A095E4004CAC4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCE5501E28A095E4004CAC4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,20 +105,22 @@
 				BCE5503828A0B22D004CAC4A /* SettingModel.swift */,
 				BC1CE3B528A33C6D004D2CD5 /* GeneralCell.swift */,
 				BC1CE3B728A34107004D2CD5 /* GeneralCell.xib */,
+				BCE5503428A0A23C004CAC4A /* menuCell.swift */,
+				BCE5503528A0A23C004CAC4A /* menuCell.xib */,
+				BCE5503028A09728004CAC4A /* ProfileCell.swift */,
+				BCE5503128A09728004CAC4A /* ProfileCell.xib */,
+				BCDA6B2128A5D26D000617FD /* HotSpotCell.swift */,
+				BCDA6B2228A5D26D000617FD /* HotSpotCell.xib */,
+				BC1CE3B928A34837004D2CD5 /* ConcentrationCell.swift */,
+				BC1CE3BB28A34846004D2CD5 /* ConcentrationCell.xib */,
+				BC1CE3BE28A36B1A004D2CD5 /* DarkModeCell.xib */,
+				BC1CE3BD28A36B1A004D2CD5 /* DarkModeCell.swift */,
 				BC41502328A1E601006F5280 /* GeneralViewController.swift */,
 				BC41502728A1E64A006F5280 /* GeneralViewController.storyboard */,
 				BC1CE3B128A3387B004D2CD5 /* ConcentrationVC.swift */,
 				BC1CE3B328A33887004D2CD5 /* ConcentrationVC.storyboard */,
-				BC1CE3B928A34837004D2CD5 /* ConcentrationCell.swift */,
-				BC1CE3BB28A34846004D2CD5 /* ConcentrationCell.xib */,
-				BCE5503428A0A23C004CAC4A /* menuCell.swift */,
-				BCE5503528A0A23C004CAC4A /* menuCell.xib */,
-				BC1CE3BD28A36B1A004D2CD5 /* DarkModeCell.swift */,
-				BC1CE3BE28A36B1A004D2CD5 /* DarkModeCell.xib */,
-				BCE5503028A09728004CAC4A /* ProfileCell.swift */,
-				BCE5503128A09728004CAC4A /* ProfileCell.xib */,
 				BC4E758528A4F738002C4DB1 /* HotSpotViewController.swift */,
-				BC4E758628A4F738002C4DB1 /* HotSpotViewController.xib */,
+				BC4E758928A4FB31002C4DB1 /* HotSpotViewController.storyboard */,
 				BC8E837F28A4C15700B4CE79 /* idViewController.swift */,
 				BC8E838028A4C15700B4CE79 /* idViewController.xib */,
 				BCE5502528A095E4004CAC4A /* Assets.xcassets */,
@@ -183,9 +189,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC41502828A1E64A006F5280 /* GeneralViewController.storyboard in Resources */,
+				BCDA6B2428A5D26D000617FD /* HotSpotCell.xib in Resources */,
 				BC1CE3BC28A34846004D2CD5 /* ConcentrationCell.xib in Resources */,
-				BC4E758828A4F738002C4DB1 /* HotSpotViewController.xib in Resources */,
 				BCE5502928A095E4004CAC4A /* LaunchScreen.storyboard in Resources */,
+				BC4E758A28A4FB31002C4DB1 /* HotSpotViewController.storyboard in Resources */,
 				BCE5503328A09728004CAC4A /* ProfileCell.xib in Resources */,
 				BC1CE3C028A36B1A004D2CD5 /* DarkModeCell.xib in Resources */,
 				BC8E838228A4C15700B4CE79 /* idViewController.xib in Resources */,
@@ -213,6 +220,7 @@
 				BCE5503928A0B22D004CAC4A /* SettingModel.swift in Sources */,
 				BCE5503228A09728004CAC4A /* ProfileCell.swift in Sources */,
 				BCE5501D28A095E4004CAC4A /* AppDelegate.swift in Sources */,
+				BCDA6B2328A5D26D000617FD /* HotSpotCell.swift in Sources */,
 				BC4E758728A4F738002C4DB1 /* HotSpotViewController.swift in Sources */,
 				BC1CE3B628A33C6D004D2CD5 /* GeneralCell.swift in Sources */,
 				BC1CE3BF28A36B1A004D2CD5 /* DarkModeCell.swift in Sources */,

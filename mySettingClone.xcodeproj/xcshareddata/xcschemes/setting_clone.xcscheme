@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BCE5501828A095E4004CAC4A"
-               BuildableName = "setting_clone.app"
+               BuildableName = "mySettingClone.app"
                BlueprintName = "mySettingClone"
                ReferencedContainer = "container:mySettingClone.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BCE5501828A095E4004CAC4A"
-            BuildableName = "setting_clone.app"
+            BuildableName = "mySettingClone.app"
             BlueprintName = "mySettingClone"
             ReferencedContainer = "container:mySettingClone.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BCE5501828A095E4004CAC4A"
-            BuildableName = "setting_clone.app"
+            BuildableName = "mySettingClone.app"
             BlueprintName = "mySettingClone"
             ReferencedContainer = "container:mySettingClone.xcodeproj">
          </BuildableReference>
