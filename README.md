@@ -8,7 +8,7 @@
 
   > **AutoLayout Constraint를 적용하여, 다양한 기기에서 대응**
 
-  > **MVP 패턴 적용**
+  > **MVC 패턴 적용**
 
   
   ## SettingModel.swift (Model)
